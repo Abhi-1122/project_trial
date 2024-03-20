@@ -11,7 +11,6 @@ import io
 import os
 from moviepy.video.fx import all as vfx
 from moviepy.editor import concatenate_videoclips
-from scipy.ndimage import zoom
 import psycopg2
 import os
 from cryptography.fernet import Fernet
