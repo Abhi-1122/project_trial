@@ -1,0 +1,144 @@
+body {
+    background-color: rgb(238, 245, 255);
+    color: #333; /* Adjusted text color for readability */
+}
+
+#uploadForm {
+    border: 2px dashed rgb(134, 182, 246);
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px; /* Set the width to create a square */
+    height: 300px; /* Set the height to create a square */
+    margin-right: 20px; /* Add margin for separation */
+    display: none;
+}
+
+#dropdowns{
+    display: none;
+    margin:20px;
+}
+
+#uploadForm.dragover {
+    border-color: rgb(23, 107, 135);
+}
+
+.image-container {
+    margin-bottom: 20px;
+}
+
+.scaled-image {
+    width: 100%; /* Adjusted width for responsiveness */
+    max-width: 300px; /* Added max-width to prevent image overflow */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* .preview-container {
+    background-color: rgb(180, 212, 255);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+} */
+
+#previewFiles {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+}
+
+.preview-container {
+text-align: center;
+margin: 20px auto;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+background-color: #e0ecfd;
+}
+
+/* Style for image checkbox */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+#generatedVideo {
+margin: 1% auto; /* Center the video horizontally */
+border: 5px solid #2196F3; /* Add a blue border around the video */
+border-radius: 5px; /* Optional: Add border-radius for rounded corners */
+display: none  /* Display the video even if set to 'none' initially */
+}
+
+#textprev {
+text-align: center;
+margin: 1% 0; /* Adjust the margin as needed */
+font-size: 3em; /* Adjust the font size as needed */
+color: #333; /* Adjust the text color for readability */
+display: none;
+}
+
+#submit-button{
+    display: none;
+}
