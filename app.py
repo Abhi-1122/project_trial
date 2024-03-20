@@ -484,6 +484,5 @@ def save_audio_file():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-cur.close()
-con.close()
+    cur.close()
+    con.close()
