@@ -365,22 +365,10 @@ def create_video(image_list, audio,durations,transitions,quality):
             for _ in range(24*durations[i]):
                 frame_list.append(img_bgr)
             video_clip = ImageSequenceClip(frame_list, fps=24)
-            if transitions[i]!="None":
-                if j==0:
-                    video_clip.write_videofile(f"clip{k}.mp4", codec="libx264", audio=True, fps=24)
-                    vid=VideoFileClip(f"clip{k}.mp4")
-                    clips.append(vid)
-                    k+=1
-                else:
-                    video_clip.write_videofile(f"clip{k}.mp4", codec="libx264", audio=True, fps=24)
-                    create_transition(f"clip{k-1}.mp4", f"clip{k}.mp4", transitions[i], f"output_video{k}.mp4", 0.5, 0)
-                    vid=VideoFileClip(f"output_video{k}.mp4")
-                    clips.append(vid)
-                    k+=1
-            else:
-                video_clip.write_videofile(f"clip{k}.mp4", codec="libx264", audio=True, fps=24)
-                k+=1
-                clips.append(video_clip)
+            if transitions[i]=="fadeblack":
+                video_clip=video_clip.fadein(0.25).fadeout(0.25)
+            # video_clip.write_videofile(f"output_video{i}.mp4", codec="libx264", audio=True, fps=24)
+            clips.append(video_clip)
             j+=durations[i]
             # if audios[i]:
             i+=1
